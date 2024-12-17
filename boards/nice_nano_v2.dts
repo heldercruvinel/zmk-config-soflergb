@@ -15,9 +15,3 @@
         };
     };
 };
-
-/ {
-    chosen {
-        zmk,backlight = &backlight;
-    };
-};

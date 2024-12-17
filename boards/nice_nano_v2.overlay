@@ -1,4 +1,6 @@
 #include <dt-bindings/led/led.h>
+#include "nice_nano_v2.dts"
+
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
@@ -25,7 +27,7 @@
     reg = <0>; /* ignored, but necessary for SPI bindings */
     spi-max-frequency = <4000000>;
     /* WS2812 */
-    chain-length = <6>; /* number of LEDs */
+    chain-length = <36>; /* number of LEDs */
     spi-one-frame = <0x70>;
     spi-zero-frame = <0x40>;
     color-mapping = <LED_COLOR_ID_GREEN
@@ -37,5 +39,6 @@
 / {
     chosen {
         zmk,underglow = &led_strip;
+        zmk,backlight = &backlight;
     };
 };
